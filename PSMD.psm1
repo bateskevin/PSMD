@@ -7,7 +7,7 @@ $PrivateClasses = gci "$ScriptPath\Classes\private" -Filter *.ps1 | Select -Expa
 foreach ($private in $PrivateClasses){
     write-verbose "importing Class $($private)"
     try{
-        . $public
+        . $private
     }catch{
         write-warning $_
     }
