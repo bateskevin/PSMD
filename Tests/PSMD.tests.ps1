@@ -8,7 +8,7 @@ Describe "Testing PSMD" {
         }
     }
     Context "Base Classes" {
-        it "[PSMD][Class][PSMDDocument] The Class should be available"{
+        it "[PSMD][Class][PSMDDocument] Creating a basic PSMDDocument"{
             {New-PSMDDocument -Name "adf" -Content {
                 Link -Text "Google it yourself" -Value "https://Google.com"
             }} | Should not throw
