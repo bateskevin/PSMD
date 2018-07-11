@@ -1,4 +1,4 @@
-Using Module ..\PSMD.psd1
+using module "..\PSMD.psd1"
 
 Describe "Testing PSMD" {
     Context "Importing the Module" {
@@ -10,6 +10,6 @@ Describe "Testing PSMD" {
     Context "Test" {
         it "logically"{
             $true | Should be $true
-        }        
+        }
     }
 }
