@@ -1,7 +1,12 @@
 $doc = New-PSMDDocument -Name "Sample" -Content {
     
     #Title
-    Title -Text "Sample Document" -Size h1
+    Title -Text "How to use PSMD" -Size h1
+    Paragraph -Text "You will find a short example from every feature of PSMD here. Feel free to give feedback on the structure of the functions and enjoy PSMD!"
+    Paragraph -Text "Also btw, this Document was generated with PSMD. If you're interessted check out the"
+    Link -Text "Script that generated this document" -Value "Examples/_Example_SampleDocument.ps1"
+
+    Title -Text "" -Size h2
     Paragraph -Text "You can add titles like this:"
     CodeBlock -Code @'
     Title -Text "Sample Document" -Size h1 
