@@ -1,12 +1,46 @@
 $doc = New-PSMDDocument -Name "Sample" -Content {
     
-    #Title
+    #Intro
     Title -Text "How to use PSMD" -Size h1
     Paragraph -Text "You will find a short example from every feature of PSMD here. Feel free to give feedback on the structure of the functions and enjoy PSMD!"
     Paragraph -Text "Also btw, this Document was generated with PSMD. If you're interessted check out the"
     Link -Text "Script that generated this document" -Value "Examples/_Example_SampleDocument.ps1"
 
-    Title -Text "" -Size h2
+    Title -Text "Basics" -Size h2
+    #Base Function
+    Title -Text "New-PSMDDocument" -Size h3
+    Paragraph -Text "Before you use one of the features of Markdown let me introduce you to the function you'll need to make PSMD work for you."
+    Paragraph -Text "Surrounding all your PSMD code you will have to have the following piece of code:"
+    CodeBlock -Code @'
+    $Document = New-PSMDDocument -Name "Sample" -Content {}
+'@
+
+    Paragraph -Text "As an example. This will **not** Work:"
+    CodeBlock -Code @'
+    Title -Text "Sample Document" -Size h1
+'@
+
+    Title -Text "Output as object" -Size h4
+    Paragraph -Text "If you place your PSMD code **in** the Scriptblock it will Work:"
+    CodeBlock -Code @'
+    $Document = New-PSMDDocument -Name "Sample" -Content {
+        Title -Text "Sample Document" -Size h1
+    }
+'@
+
+    Paragraph -Text 'So for now you will have the Object of the Document saved in **$Document**'
+
+    Title -Text "Output as .md File" -Size h4
+    Paragraph -Text "So if you want to export your PSMD code directly in a .md file you can set the parameter '-OutputPath'. The File will then be saved with the name you pass on '-name' and at the folder you pass on '-OutputPath'"
+    CodeBlock -Code @'
+    $Document = New-PSMDDocument -Name "Sample" -Content {
+        Title -Text "Sample Document" -Size h1
+    } -OutputPath .\Folder\of\your\choosing
+'@  
+
+    Title -Text "Individual Markdown Features in PSMD" -Size h2
+    #Title
+    Title -Text "Titles" -Size h3
     Paragraph -Text "You can add titles like this:"
     CodeBlock -Code @'
     Title -Text "Sample Document" -Size h1 
@@ -17,6 +51,13 @@ $doc = New-PSMDDocument -Name "Sample" -Content {
     Paragraph -Text "You can add paragraphes like this:"
     CodeBlock -Code @'
     Paragraph -Text "here you go" 
+'@
+
+    #BlockQuote
+    Title -Text "BlockQuote" -Size h3
+    Paragraph -Text "You can add BlockQuotes like this:"
+    CodeBlock -Code @'
+    BlockQuote -Text "I have a dream" 
 '@
 
     #Links
@@ -101,7 +142,29 @@ $doc = New-PSMDDocument -Name "Sample" -Content {
             return "HelloWorld"
         } 
 '@
-    
+
+    #Tables
+    Title -Text "Tables" -Size h3
+    Paragraph -Text "Tables for now are in kind of a Beta state. You basically pass an object and PSMD creates a Markdown table out of it. However, for the moment it is recommended, that you only pass objects from a hash you create yourself, cause the Function does not handle objects with hidden properties very well."
+    Paragraph -Text "You can add tables like this:"
+    CodeBlock -Code @'
+    $hash = @{}
+    $hash.surname = "Jones"
+    $Hash.SecondName = "Joseph"
+    $Hash.FirstName = "Jonas"
+    $obj = New-Object psobject -Property $hash
+    $doc = New-PSMDDocument -Name "Table_Sample" -Content {
+        Table -InputObj $obj
+    } -OutputPath .\
+'@
+
+    Paragraph -Text "The Table will look something like this:"
+    $hash = @{}
+    $hash.surname = "Jones"
+    $Hash.SecondName = "Joseph"
+    $Hash.FirstName = "Jonas"
+    $obj = New-Object psobject -Property $hash
+    Table -InputObj $obj
     
     Title -Text "Sample Document" -Size h2
     Link -Text "Go Checkout the other examples" -Value "Examples/"
