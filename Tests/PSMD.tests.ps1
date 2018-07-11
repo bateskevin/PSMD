@@ -7,9 +7,9 @@ Describe "Testing PSMD" {
             $Module | should be $true
         }
     }
-    Context "Test" {
-        it "logically"{
-            $true | Should be $true
+    Context "Base Classes" {
+        it "[PSMD][Class][PSMDDocument] The Class should be available"{
+            {[PSMDDocument]} | Should not throw
         }
     }
 }
