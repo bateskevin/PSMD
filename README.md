@@ -14,6 +14,35 @@ write Markdown documents in Powershell
 ### Wanna learn how it's done?
 Check out [this document](Sample.md) to learn how to use PSMD.
 
+### To do Base Functionality:
+
+- [X] BulletPoint
+- [X] CheckListItem
+- [X] CodeBlock
+- [X] Image
+- [X] Link
+- [X] OrderedListItem
+- [X] Paragraph
+- [X] Title
+- [ ] BlockQuote
+- [ ] Issue refference
+- [ ] Tables
+
+### Roadmap
+
+The current plan for this project is, that it will support all markdown base functionality. 
+
+The next steps are:
+
+* Write remaning functions for base functionality.
+* Add option to add styles to sections. 
+* Upload to the PS Gallery \o/
+
+This will maybe come in the future:
+
+* Support for multiple flavors of Markdown.
+
+
 ### Contribute
 
 Wanna contribute? please take a look at these files before you start:
