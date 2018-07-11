@@ -1,5 +1,6 @@
 Enum SectionType {
     BulletPoint
+    OrderedListItem
     Title
     Table
     List
