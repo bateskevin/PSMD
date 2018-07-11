@@ -19,7 +19,20 @@ $PublicFunctions = gci "$ScriptPath\Functions\public" -Filter *.ps1 | Select -Ex
 
 
 foreach ($public in $PublicFunctions){
-    write-verbose "importing function $($function)"
+    write-verbose "importing function $($public)"
+    try{
+        . $public
+    }catch{
+        write-warning $_
+    }
+}
+
+write-verbose "Loading Private Classes"
+$PrivateClasses = gci "$ScriptPath\Classes\public" -Filter *.ps1 | Select -Expand FullName
+
+
+foreach ($private in $PrivateClasses){
+    write-verbose "importing Class $($private)"
     try{
         . $public
     }catch{
