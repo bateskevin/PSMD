@@ -53,6 +53,13 @@ $doc = New-PSMDDocument -Name "Sample" -Content {
     Paragraph -Text "here you go" 
 '@
 
+    #BlockQuote
+    Title -Text "BlockQuote" -Size h3
+    Paragraph -Text "You can add BlockQuotes like this:"
+    CodeBlock -Code @'
+    BlockQuote -Text "I have a dream" 
+'@
+
     #Links
     Title -Text "Links" -Size h3
     Paragraph -Text "You can add Links like this:"

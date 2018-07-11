@@ -24,9 +24,8 @@ Check out [this document](Sample.md) to learn how to use PSMD.
 - [X] OrderedListItem
 - [X] Paragraph
 - [X] Title
-- [ ] BlockQuote
-- [ ] Issue refference
-- [ ] Tables
+- [X] BlockQuote
+- [X] Tables
 
 ### Roadmap
 
