@@ -15,7 +15,3 @@ Function New-PSMDDocument {
     [PSMDDocument]::new($Name,$Content.invoke())
 
 }
-
-$d = New-PSMDDocument -Name "adf" -Content {
-    Link -Text "Google it yourself" -Value "https://Google.com"
-}
