@@ -1,5 +1,5 @@
 $ScriptPath = Split-Path $MyInvocation.MyCommand.Path
-
+<#
 write-verbose "Loading Private Functions"
 $PrivateFunctions = gci "$ScriptPath\Functions\Private" -Filter *.ps1 | Select -Expand FullName
 
@@ -13,7 +13,7 @@ foreach ($Private in $PrivateFunctions){
         write-warning $_
     }
 }
-
+#>
 write-verbose "Loading Public Functions"
 $PublicFunctions = gci "$ScriptPath\Functions\public" -Filter *.ps1 | Select -Expand FullName
 
