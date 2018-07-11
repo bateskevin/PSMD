@@ -1,4 +1,4 @@
-Import-Module -Force -Name .\PSMD.psd1
+using module "..\PSMD.psd1"
 
 Describe "Testing PSMD" {
     Context "Importing the Module" {
@@ -7,9 +7,11 @@ Describe "Testing PSMD" {
             $Module | should be $true
         }
     }
-    Context "Test" {
-        it "logically"{
-            $true | Should be $true
-        }        
+    Context "Base Classes" {
+        it "[PSMD][Class][PSMDDocument] Creating a basic PSMDDocument"{
+            {New-PSMDDocument -Name "adf" -Content {
+                Link -Text "Google it yourself" -Value "https://Google.com"
+            }} | Should not throw
+        }
     }
 }
