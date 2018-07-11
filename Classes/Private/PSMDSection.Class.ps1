@@ -8,6 +8,7 @@ Enum SectionType {
     List
     Link
     Paragraph
+    CodeBlock
    }
 
 Class PSMDSection {
