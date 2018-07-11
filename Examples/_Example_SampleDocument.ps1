@@ -4,7 +4,7 @@ $doc = New-PSMDDocument -Name "Sample" -Content {
     Paragraph -Text "This is a sample document created with PSMD"
     Paragraph -Text "you wanna learn how it's done?"
 
-    Title -Text "Sample Document" -Size h1
+    Title -Text "Sample Document" -Size h2
     Link -Text "Go Checkout the other examples" -Value "Examples/"
     Link -Text "Google it yourself" -Value "https://Google.com"
-} -OutputPath c:\user\taabake4\vscode\psmd\
+} -OutputPath ".\local\"
