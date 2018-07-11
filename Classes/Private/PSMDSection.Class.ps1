@@ -1,12 +1,12 @@
 Enum SectionType {
     BulletPoint
+    Image
     CheckListItem
     OrderedListItem
     Title
     Table
     List
     Link
-    Image
     Paragraph
    }
 
