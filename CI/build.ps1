@@ -62,4 +62,4 @@ if($env:APPVEYOR_REPO_COMMIT_MESSAGE -match '\[(Major)\]'){
     [String]$newVersion = New-Object -TypeName System.Version -ArgumentList ($version.Major, $version.Minor, ($version.build + 1))
 }
 write-host "Going to increment Version number from $Version to $NewVersion"-forgroundcolor green
-Update-ModuleManifest -Path $manifestPath -ModuleVersion $newVersion
+Update-ModuleManifest -Path $manifestPath -ModuleVersion $newVersion -CmdletsToExport '*' -FunctionsToExport '*' -VariablesToExport '*'
