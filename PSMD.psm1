@@ -28,7 +28,7 @@ foreach ($public in $PublicFunctions){
 }
 
 write-verbose "Loading Private Classes"
-$PrivateClasses = gci "$ScriptPath\Classes\public" -Filter *.ps1 | Select -Expand FullName
+$PrivateClasses = gci "$ScriptPath\Classes\private" -Filter *.ps1 | Select -Expand FullName
 
 
 foreach ($private in $PrivateClasses){
