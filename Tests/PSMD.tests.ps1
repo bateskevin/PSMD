@@ -1,4 +1,4 @@
-Using Module .\PSMD.psd1
+Using Module ..\PSMD.psd1
 
 Describe "Testing PSMD" {
     Context "Importing the Module" {
