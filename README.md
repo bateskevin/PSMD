@@ -9,7 +9,7 @@ write Markdown documents in Powershell
 | Dev Branch      | [![Build status](https://ci.appveyor.com/api/projects/status/bpaj88j9pqjxia0a/branch/Dev?svg=true)](https://ci.appveyor.com/project/bateskevin/psmd/branch/Dev)      |
 | Current Build      | [![Build status](https://ci.appveyor.com/api/projects/status/bpaj88j9pqjxia0a?svg=true)](https://ci.appveyor.com/project/bateskevin/psd)      |
 | Test Status      | ![AppVeyor tests branch](https://img.shields.io/appveyor/tests/bateskevin/PSMD/master.svg)      |
-| Code Coverage      | ![Test Coverage](https://img.shields.io/badge/coverage-26%25-red.svg?maxAge=60)      |
+| Code Coverage      | ![Test Coverage](https://img.shields.io/badge/coverage-25%25-red.svg?maxAge=60)      |
 
 ### Wanna learn how it's done?
 Check out [this document](Sample.md) to learn how to use PSMD.
