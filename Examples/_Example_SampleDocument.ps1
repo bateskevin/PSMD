@@ -87,7 +87,7 @@ $doc = New-PSMDDocument -Name "Sample" -Content {
             return "HelloWorld"
         } 
     '@
-}
+
 '@
 
     Paragraph -Text "The CheckListItem will look something like this:"
