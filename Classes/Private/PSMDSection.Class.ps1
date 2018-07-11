@@ -4,6 +4,7 @@ Enum SectionType {
     List
     Link
     Image
+    Paragraph
    }
 
 Class PSMDSection {
