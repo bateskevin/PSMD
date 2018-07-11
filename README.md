@@ -11,6 +11,9 @@ write Markdown documents in Powershell
 | Test Status      | ![AppVeyor tests branch](https://img.shields.io/appveyor/tests/bateskevin/PSMD/master.svg)      |
 | Code Coverage      | ![Test Coverage](https://img.shields.io/badge/coverage-40%25-red.svg?maxAge=60)      |
 
+### Wanna learn how it's done?
+Check out [this document](Sample.md) to learn how to use PSMD.
+
 ### Contribute
 
 Wanna contribute? please take a look at these files before you start:
