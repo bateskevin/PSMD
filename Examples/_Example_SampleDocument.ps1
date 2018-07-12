@@ -4,7 +4,7 @@ $doc = New-PSMDDocument -Name "Sample" -Content {
     Title -Text "How to use PSMD" -Size h1
     Paragraph -Text "You will find a short example from every feature of PSMD here. Feel free to give feedback on the structure of the functions and enjoy PSMD!"
     Paragraph -Text "Also btw, this Document was generated with PSMD. If you're interessted check out the"
-    Link -Text "Script that generated this document" -Value "Examples/_Example_SampleDocument.ps1"
+    Link -Text "Script that generated this document" -Value "../Examples/_Example_SampleDocument.ps1"
 
     Title -Text "Basics" -Size h2
     #Base Function
@@ -116,7 +116,7 @@ $doc = New-PSMDDocument -Name "Sample" -Content {
     Image -Text "Sample image" -ImagePath "Images/Powershell.png" 
 '@
     Paragraph -Text "The image will look something like this:";LineBreak
-    Image -Text "Sample image" -ImagePath "Images/Powershell.png"
+    Image -Text "Sample image" -ImagePath "../Images/Powershell.png"
 
     #BulletPoints
     Title -Text "BulletPoints" -Size h3
@@ -206,5 +206,5 @@ $doc = New-PSMDDocument -Name "Sample" -Content {
     Table -InputObj $obj
     
     Title -Text "Sample Document" -Size h2
-    Link -Text "Go Checkout the other examples" -Value "Examples/"
+    Link -Text "Go Checkout the other examples" -Value "../Examples/"
 } -OutputPath ".\local\"
