@@ -12,7 +12,7 @@ write Markdown documents in Powershell
 | Code Coverage      | ![Test Coverage](https://img.shields.io/badge/coverage-25%25-red.svg?maxAge=60)      |
 
 ### Wanna learn how it's done?
-Check out [this document](Sample.md) to learn how to use PSMD.
+Check out [this document](Docs/Sample.md) to learn how to use PSMD.
 
 ### To do Base Functionality:
 
