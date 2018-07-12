@@ -46,12 +46,49 @@ $doc = New-PSMDDocument -Name "Sample" -Content {
     Title -Text "Sample Document" -Size h1 
 '@
 
+    #LineBreaks
+    Title -Text "Linebreaks" -Size h3
+    Paragraph -Text "Normally after every line there is a new line starting. You can however, with PSMD, add more linebreaks or choose to have your value on the same line as the value above."
+    Title -Text "Add a linebreak" -Size h3
+    CodeBlock -Code @'
+    Paragraph -Text "This is a sample paragraph"
+    LineBreak
+    LineBreak
+    Paragraph -Text "This is a sample paragraph a few lines below." 
+'@
+    Paragraph -Text "This will look something like this:"
+    LineBreak;LineBreak
+    Paragraph -Text "This is a sample paragraph"
+    LineBreak;LineBreak    
+    Paragraph -Text "This is a sample paragraph a few lines below."
+    
+    Title -Text "Have two sections on one line" -Size h3
+    CodeBlock -Code @'
+    Paragraph -Text "This is a sample paragraph."
+    Paragraph -Text " And this wil be on the line above." -NoNewLine 
+'@
+    Paragraph -Text "This will look something like this:"
+    LineBreak    
+    Paragraph -Text "This is a sample paragraph."
+    Paragraph -Text " And this wil be on the line above." -NoNewLine
+
     #Paragraph
     Title -Text "Paragraphs" -Size h3
     Paragraph -Text "You can add paragraphes like this:"
     CodeBlock -Code @'
     Paragraph -Text "here you go" 
 '@
+    Title -Text "Style of Paragraphs" -Size h4
+    Paragraph -Text "You can add styles to paragraphes like this:"
+    CodeBlock -Code @'
+    Paragraph -Text "This is bold text" -Style bold
+    Paragraph -Text "This is Italic text" -Style Italic
+    Paragraph -Text "This is bold and italic text" -Style bold,Italic 
+'@
+    Paragraph -Text "The Paragraphes with styles will look something like this:";LineBreak
+    Paragraph -Text "This is bold text" -Style bold;LineBreak
+    Paragraph -Text "This is Italic text" -Style Italic;LineBreak
+    Paragraph -Text "This is bold and italic text" -Style bold,Italic
 
     #BlockQuote
     Title -Text "BlockQuote" -Size h3
@@ -59,6 +96,8 @@ $doc = New-PSMDDocument -Name "Sample" -Content {
     CodeBlock -Code @'
     BlockQuote -Text "I have a dream" 
 '@
+    Paragraph -Text "The Blockquote will look something like this:"
+    BlockQuote -Text "I have a dream" 
 
     #Links
     Title -Text "Links" -Size h3
@@ -76,7 +115,7 @@ $doc = New-PSMDDocument -Name "Sample" -Content {
     CodeBlock -Code @'
     Image -Text "Sample image" -ImagePath "Images/Powershell.png" 
 '@
-    Paragraph -Text "The image will look something like this:"
+    Paragraph -Text "The image will look something like this:";LineBreak
     Image -Text "Sample image" -ImagePath "Images/Powershell.png"
 
     #BulletPoints
@@ -168,5 +207,4 @@ $doc = New-PSMDDocument -Name "Sample" -Content {
     
     Title -Text "Sample Document" -Size h2
     Link -Text "Go Checkout the other examples" -Value "Examples/"
-    Link -Text "Google it yourself" -Value "https://Google.com"
 } -OutputPath ".\local\"
