@@ -57,10 +57,9 @@ $doc = New-PSMDDocument -Name "Sample" -Content {
     Paragraph -Text "This is a sample paragraph a few lines below." 
 '@
     Paragraph -Text "This will look something like this:"
-    LineBreak
+    LineBreak;LineBreak
     Paragraph -Text "This is a sample paragraph"
-    LineBreak
-    LineBreak
+    LineBreak;LineBreak    
     Paragraph -Text "This is a sample paragraph a few lines below."
     
     Title -Text "Have two sections on one line" -Size h3
@@ -81,14 +80,14 @@ $doc = New-PSMDDocument -Name "Sample" -Content {
 '@
     Title -Text "Style of Paragraphs" -Size h4
     Paragraph -Text "You can add styles to paragraphes like this:"
-    @'
+    CodeBlock -Code @'
     Paragraph -Text "This is bold text" -Style bold
     Paragraph -Text "This is Italic text" -Style Italic
     Paragraph -Text "This is bold and italic text" -Style bold,Italic 
 '@
-    Paragraph -Text "The Paragraphes with styles will look something like this:"
-    Paragraph -Text "This is bold text" -Style bold
-    Paragraph -Text "This is Italic text" -Style Italic
+    Paragraph -Text "The Paragraphes with styles will look something like this:";LineBreak
+    Paragraph -Text "This is bold text" -Style bold;LineBreak
+    Paragraph -Text "This is Italic text" -Style Italic;LineBreak
     Paragraph -Text "This is bold and italic text" -Style bold,Italic
 
     #BlockQuote
@@ -116,7 +115,7 @@ $doc = New-PSMDDocument -Name "Sample" -Content {
     CodeBlock -Code @'
     Image -Text "Sample image" -ImagePath "Images/Powershell.png" 
 '@
-    Paragraph -Text "The image will look something like this:"
+    Paragraph -Text "The image will look something like this:";LineBreak
     Image -Text "Sample image" -ImagePath "Images/Powershell.png"
 
     #BulletPoints
@@ -208,5 +207,4 @@ $doc = New-PSMDDocument -Name "Sample" -Content {
     
     Title -Text "Sample Document" -Size h2
     Link -Text "Go Checkout the other examples" -Value "Examples/"
-    Link -Text "Google it yourself" -Value "https://Google.com"
 } -OutputPath ".\local\"
