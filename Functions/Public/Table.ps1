@@ -44,13 +44,17 @@ Function Table {
     $ReturnArr += $Head
     $ReturnArr += $Minus
 
+    
+    $count = 0
     foreach($Value in $InputObj){
+        $TableLine = $null
         foreach($HeaderName in $HeaderNames){
             $TableLine = $TableLine + " | " + $value.$HeaderName 
         }
         $TableLine = $TableLine + " |"
         $Line = [PSMDSection]::new($Type,$TableLine)
         $ReturnArr += $Line
+        $count++
     }
 
     $ReturnArr += $empty

@@ -184,7 +184,12 @@ $doc = New-PSMDDocument -Name "Sample" -Content {
 
     #Tables
     Title -Text "Tables" -Size h3
-    Paragraph -Text "Tables for now are in kind of a Beta state. You basically pass an object and PSMD creates a Markdown table out of it. However, for the moment it is recommended, that you only pass objects from a hash you create yourself, cause the Function does not handle objects with hidden properties very well."
+    Paragraph -Text "Tables are generated with an object, or an array containing objects, as the input."
+    LineBreak;LineBreak
+    Paragraph -Text "To see how more advanced tables are generated see "
+    Link -Text "the Table examples." -Value "../Examples/Example_Table.ps1"
+    Paragraph -Text "To see results of the Tables see  " -NoNewLine
+    Link -Text "the Tables themselves." -Value "../Examples/TableResults/"
     Paragraph -Text "You can add tables like this:"
     CodeBlock -Code @'
     $hash = @{}
