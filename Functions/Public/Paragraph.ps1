@@ -4,6 +4,9 @@ Function Paragraph {
     param(
         [string]
         $Text,
+        
+        [StyleOption[]]
+        $Style,
 
         [SectionType]
         $Type = "Paragraph"
@@ -11,7 +14,7 @@ Function Paragraph {
 
     $Line = $Text
 
-    $Paragraph = [PSMDSection]::new($Type,$Line)
+    $Paragraph = [PSMDSection]::new($Type,$Line,$Style)
     
     return $Paragraph
 }

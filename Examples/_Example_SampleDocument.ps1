@@ -52,6 +52,17 @@ $doc = New-PSMDDocument -Name "Sample" -Content {
     CodeBlock -Code @'
     Paragraph -Text "here you go" 
 '@
+    Title -Text "Style of Paragraphs" -Size h4
+    Paragraph -Text "You can add styles to paragraphes like this:"
+    @'
+    Paragraph -Text "This is bold text" -Style bold
+    Paragraph -Text "This is Italic text" -Style Italic
+    Paragraph -Text "This is bold and italic text" -Style bold,Italic 
+'@
+    Paragraph -Text "The Paragraphes with styles will look something like this:"
+    Paragraph -Text "This is bold text" -Style bold
+    Paragraph -Text "This is Italic text" -Style Italic
+    Paragraph -Text "This is bold and italic text" -Style bold,Italic
 
     #BlockQuote
     Title -Text "BlockQuote" -Size h3
@@ -59,6 +70,8 @@ $doc = New-PSMDDocument -Name "Sample" -Content {
     CodeBlock -Code @'
     BlockQuote -Text "I have a dream" 
 '@
+    Paragraph -Text "The Blockquote will look something like this:"
+    BlockQuote -Text "I have a dream" 
 
     #Links
     Title -Text "Links" -Size h3
