@@ -1,7 +1,8 @@
 using module "..\PSMD.psd1"
+. $PSScriptRoot\..\Classes\Private\PSMDDocument.Class.ps1
+. $PSScriptRoot\..\Classes\Private\PSMDSection.Class.ps1
 
-& "..\Classes\Private\PSMDDocument.Class.ps1"
-& "..\Classes\Private\PSMDSection.Class.ps1"
+
 
 Describe "Testing Class PSMDDocument" {
     Context "Base functionality" {
@@ -30,9 +31,9 @@ Describe "Testing Class PSMDDocument" {
         it "[PSMD][Class][PSMDDocument] The Content Property should not be empty" {
             $Doc.Content | should not BeNullOrEmpty
         }
-
+        
         it "[PSMD][Class][PSMDDocument] The Content Property should be of type 'PSMDSection'" {
-            $Doc.Content | should BeOfType PSMDSection
+            $Doc.Content.GetType().name | should be "PSMDSection"
         }
     }
 }

@@ -1,7 +1,7 @@
 using module "..\PSMD.psd1"
 
-& "..\Classes\Private\PSMDDocument.Class.ps1"
-& "..\Classes\Private\PSMDSection.Class.ps1"
+. $PSScriptRoot\..\Classes\Private\PSMDDocument.Class.ps1
+. $PSScriptRoot\..\Classes\Private\PSMDSection.Class.ps1
 
 Describe "Testing Class PSMDSection" {
     Context "Base functionality" {
