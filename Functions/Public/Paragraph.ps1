@@ -32,7 +32,7 @@ Function Paragraph {
 
     $Line = $Text
 
-    if($Style){
+    if($Style -contains "Bold" -or $Style -contains "Italic"){
         if($NoNewLine){
             $Paragraph = [PSMDSection]::new($Type,$Line,$Style,$NoNewLine)
         }else{
