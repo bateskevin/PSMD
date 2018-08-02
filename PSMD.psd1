@@ -12,7 +12,7 @@
 RootModule = 'PSMD.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.9.11'
+ModuleVersion = '1.0.1'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
