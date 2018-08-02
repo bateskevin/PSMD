@@ -14,6 +14,14 @@ write Markdown documents in Powershell
 ### Wanna learn how it's done?
 Check out [this document](Docs/Sample.md) to learn how to use PSMD.
 
+#### Try it out yourself!
+
+Install the Module from the Powershell Gallery
+
+```
+Install-Module PSMD
+```
+
 ### To do Base Functionality:
 
 - [X] BulletPoint
@@ -33,9 +41,9 @@ The current plan for this project is, that it will support all markdown base fun
 
 The next steps are:
 
-* Write remaning functions for base functionality.
-* Add option to add styles to sections. 
-* Upload to the PS Gallery \o/
+- [X] Write remaning functions for base functionality.
+- [X] Add option to add styles to sections. 
+- [X] Upload to the PS Gallery \o/
 
 This will maybe come in the future:
 

@@ -32,9 +32,16 @@ Class PSMDSection {
         $This.ID = New-Guid
         $This.NoNewLine = $false
 
-        Switch ($Style) {
-            "Bold" {$this.line = "**" + $this.line + "**"}
-            "Italic" {$this.line = "_" + $this.line + "_"}
+        #Switch ($Style) {
+        #    "Bold" {$this.line = "**" + $this.line + "**"}
+        #    "Italic" {$this.line = "_" + $this.line + "_"}
+        #}
+
+        if($Style -contains "Bold"){
+            $this.line = "**" + $this.line + "**"
+        }
+        if($Style -contains "Italic"){
+            $this.line = "_" + $this.line + "_"
         }
     }
 
