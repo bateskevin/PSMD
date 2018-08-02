@@ -4,6 +4,7 @@ Describe "Testing Function CheckListItem" {
     Context "Base Functionality" {
         it "[PSMD][Function][CheckListItem] Create a CheckListItem" {
             {CheckListItem -Text "Test" -Status Checked } | should not throw
+            {CheckListItem -Text "Test" -Status UnChecked } | should not throw
         }
     }
 

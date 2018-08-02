@@ -3,7 +3,7 @@ using module "..\PSMD.psd1"
 Describe "Testing Function Table" {
     Context "Base Functionality" {
         it "[PSMD][Function][Table] Create a Table" {
-            {table -InputObj (get-date)} | should not throw
+            {table -InputObj (get-date) -Properties Date,Day} | should not throw
         }
     }
 

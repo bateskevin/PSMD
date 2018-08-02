@@ -4,6 +4,8 @@ Describe "Testing Function BulletPoint" {
     Context "Base Functionality" {
         it "[PSMD][Function][BulletPoint] Create a BulletPoint" {
             {BulletPoint -Text "Test" -Level 0} | should not throw
+            {BulletPoint -Text "Test" -Level 1} | should not throw
+            {BulletPoint -Text "Test" -Level 2} | should not throw
         }
     }
 

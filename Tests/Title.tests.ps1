@@ -4,6 +4,11 @@ Describe "Testing Function Title" {
     Context "Base Functionality" {
         it "[PSMD][Function][Title] Create a Title" {
             {Title -Text "Hello" -Size h1} | should not throw
+            {Title -Text "Hello" -Size h2} | should not throw
+            {Title -Text "Hello" -Size h3} | should not throw
+            {Title -Text "Hello" -Size h4} | should not throw
+            {Title -Text "Hello" -Size h5} | should not throw
+            {Title -Text "Hello" -Size h6} | should not throw
         }
     }
 

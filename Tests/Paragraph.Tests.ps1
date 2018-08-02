@@ -5,6 +5,14 @@ Describe "Testing Function Paragraph" {
         it "[PSMD][Function][Paragraph] Create a paragraph" {
             {Paragraph -Text "Test"} | should not throw
         }
+
+        it "[PSMD][Function][Paragraph] Create a paragraph on the same line and with style italic" {
+            {Paragraph -Text "Test" -NoNewLine -Style Italic} | should not throw
+        }
+
+        it "[PSMD][Function][Paragraph] Create a paragraph on the same line" {
+            {Paragraph -Text "Test" -NoNewLine} | should not throw
+        }
     }
 
     Context "Paragraph specifics" {
