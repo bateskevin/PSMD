@@ -1,6 +1,6 @@
 using module "..\PSMD.psd1"
 
-Describe "Testing PSMD" {
+Describe "Testing PSMD Module Functionality" {
     Context "Importing the Module" {
         it "[PSMD][Module] The module should be available after the import" {
             $Module = Get-Module PSMD
