@@ -12,7 +12,7 @@ Describe "Testing Function Table" {
         $Table = table -InputObj (get-date)
 
         it "[PSMD][Function][Table] The Type Property should be 'Table'" {
-            $Table.Type | should Be "Table"
+            $Table[0].Type | should Be "Table"
         }
 
         it "[PSMD][Function][Table] The ID Property should not be empty" {
