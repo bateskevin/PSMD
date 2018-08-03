@@ -22,5 +22,13 @@ Describe "Testing Function Link" {
         it "[PSMD][Function][Link] The Line Property should not be empty" {
             $Link.Line | should not BeNullOrEmpty
         }
+
+        it "[PSMD][Function][Link] The string in 'Line' should start with '[" {
+            $Link.Line | should Match '\[*'
+        }
+
+        it "[PSMD][Function][Link] The string in 'Line' should end with ')'" {
+            $Link.Line | should BeLike "*)"
+        }
     }
 }

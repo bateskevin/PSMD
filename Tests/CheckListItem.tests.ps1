@@ -23,5 +23,14 @@ Describe "Testing Function CheckListItem" {
         it "[PSMD][Function][CheckListItem] The Line Property should not be empty" {
             $CheckListItem.Line | should not BeNullOrEmpty
         }
+
+        it "[PSMD][Function][CheckListItem] The 'Checked' string in 'Line' should start with '- [X]'" {
+            $CheckListItem.Line | should match '- \[X]*'
+        }
+
+        $CheckListItem = CheckListItem -Text "Test" -Status UnChecked
+        it "[PSMD][Function][CheckListItem] The 'UnChecked' string in 'Line' should start with '- ['" {
+            $CheckListItem.Line | should match '- \[*'
+        }
     }
 }

@@ -38,5 +38,9 @@ Describe "Testing Function Paragraph" {
         it "[PSMD][Function][Paragraph] The NoNewLine Property should be False" {
             $Paragraph.NoNewLine | should be $false
         }
+
+        it "[PSMD][Function][Paragraph] The string in 'Line' should be '_Test_'" {
+            $Paragraph.Line | should BeExactly "_Test_"
+        }
     }
 }

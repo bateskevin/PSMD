@@ -24,5 +24,19 @@ Describe "Testing Function BulletPoint" {
         it "[PSMD][Function][BulletPoint] The Line Property should not be empty" {
             $BulletPoint.Line | should not BeNullOrEmpty
         }
+
+        it "[PSMD][Function][BulletPoint] The string in 'Line' should start with '*'" {
+            $BulletPoint.Line | should match '\*'
+        }
+
+        $BulletPoint = BulletPoint -Text "Test" -Level 1
+        it "[PSMD][Function][BulletPoint] The string in 'Line' should start with '   \*'" {
+            $BulletPoint.Line | should match '   '
+        }
+
+        $BulletPoint = BulletPoint -Text "Test" -Level 2
+        it "[PSMD][Function][BulletPoint] The string in 'Line' should start with '     \*'" {
+            $BulletPoint.Line | should match '     '
+        }
     }
 }

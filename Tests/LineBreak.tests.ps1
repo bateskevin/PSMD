@@ -22,5 +22,9 @@ Describe "Testing Function LineBreak" {
         it "[PSMD][Function][LineBreak] The Line Property should not be empty" {
             $LineBreak.Line | should not BeNullOrEmpty
         }
+
+        it "[PSMD][Function][LineBreak] The string in 'Line' should be '<br/>'" {
+            $LineBreak.Line | should BeExactly "<br/>"
+        }
     }
 }

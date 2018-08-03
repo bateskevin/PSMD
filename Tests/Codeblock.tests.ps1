@@ -22,5 +22,13 @@ Describe "Testing Function CodeBlock" {
         it "[PSMD][Function][CodeBlock] The Line Property should not be empty" {
             $CodeBlock.Line | should not BeNullOrEmpty
         }
+
+        it "[PSMD][Function][CodeBlock] The string in 'Line' should start with '```````'" {
+            $CodeBlock.Line | should Match '``` *'
+        }
+
+        it "[PSMD][Function][CodeBlock] The string in 'Line' should end with '```````'" {
+            $CodeBlock.Line | should Match '```'
+        }
     }
 }

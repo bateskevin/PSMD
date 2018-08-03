@@ -9,7 +9,7 @@ Describe "Testing Function OrderedListItem" {
 
     Context "OrderedListItem specifics" {
 
-        $OrderedListItem = OrderedListItem -Text "a" -Number 1
+        $OrderedListItem = OrderedListItem -Text "Test" -Number 1
 
         it "[PSMD][Function][OrderedListItem] The Type Property should be 'OrderedListItem'" {
             $OrderedListItem.Type | should Be "OrderedListItem"
@@ -21,6 +21,10 @@ Describe "Testing Function OrderedListItem" {
 
         it "[PSMD][Function][OrderedListItem] The Line Property should not be empty" {
             $OrderedListItem.Line | should not BeNullOrEmpty
+        }
+
+        it "[PSMD][Function][OrderedListItem] The string in 'Line' should be '1. Test'" {
+            $OrderedListItem.Line | should BeExactly "1. Test"
         }
     }
 }

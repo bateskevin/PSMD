@@ -22,5 +22,9 @@ Describe "Testing Function BlockQuote" {
         it "[PSMD][Function][BlockQuote] The Line Property should not be empty" {
             $BlockQuote.Line | should not BeNullOrEmpty
         }
+
+        it "[PSMD][Function][BlockQuote] The string in 'Line' should start with '>'" {
+            $BlockQuote.Line | should BeLike "> *"
+        }
     }
 }

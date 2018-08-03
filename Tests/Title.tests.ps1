@@ -27,5 +27,34 @@ Describe "Testing Function Title" {
         it "[PSMD][Function][Title] The Line Property should not be empty" {
             $Title.Line | should not BeNullOrEmpty
         }
+
+        it "[PSMD][Function][Title] The string in 'Line' should be '# Hello'" {
+            $Title.Line | should BeExactly "# Hello"
+        }
+
+        $Title = Title -Text "Hello" -Size h2
+        it "[PSMD][Function][Title] The string in 'Line' should be '## Hello'" {
+            $Title.Line | should BeExactly "## Hello"
+        }
+
+        $Title = Title -Text "Hello" -Size h3
+        it "[PSMD][Function][Title] The string in 'Line' should be '### Hello'" {
+            $Title.Line | should BeExactly "### Hello"
+        }
+
+        $Title = Title -Text "Hello" -Size h4
+        it "[PSMD][Function][Title] The string in 'Line' should be '#### Hello'" {
+            $Title.Line | should BeExactly "#### Hello"
+        }
+
+        $Title = Title -Text "Hello" -Size h5
+        it "[PSMD][Function][Title] The string in 'Line' should be '##### Hello'" {
+            $Title.Line | should BeExactly "##### Hello"
+        }
+
+        $Title = Title -Text "Hello" -Size h6
+        it "[PSMD][Function][Title] The string in 'Line' should be '###### Hello'" {
+            $Title.Line | should BeExactly "###### Hello"
+        }
     }
 }
