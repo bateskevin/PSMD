@@ -52,7 +52,7 @@ Describe "Testing Function Paragraph" {
         $Paragraph = Paragraph -Text "Test" -Style Bold -NoNewLine
 
         it "[PSMD][Function][Paragraph] The string in 'Line' should be '**Test**'" {
-            $Paragraph.Line | should BeExactly "**Test**"
+            $Paragraph.Line | should BeExactly "<nobr>**Test**</nobr>"
         }
     }
 }
