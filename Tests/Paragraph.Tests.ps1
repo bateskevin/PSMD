@@ -42,5 +42,17 @@ Describe "Testing Function Paragraph" {
         it "[PSMD][Function][Paragraph] The string in 'Line' should be '_Test_'" {
             $Paragraph.Line | should BeExactly "_Test_"
         }
+
+        $Paragraph = Paragraph -Text "Test" -Style Bold
+
+        it "[PSMD][Function][Paragraph] The string in 'Line' should be '**Test**'" {
+            $Paragraph.Line | should BeExactly "**Test**"
+        }
+
+        $Paragraph = Paragraph -Text "Test" -Style Bold -NoNewLine
+
+        it "[PSMD][Function][Paragraph] The string in 'Line' should be '**Test**'" {
+            $Paragraph.Line | should BeExactly "**Test**"
+        }
     }
 }
