@@ -30,7 +30,7 @@ Get-Module PSMarkdown
 
 #Pester Tests
 write-verbose "invoking pester"
-$TestFiles = (Get-ChildItem -Path .\ -Recurse  | ?{$_.name.EndsWith(".ps1") -and $_.name -notmatch ".tests." -and $_.name -notmatch "build" -and $_.name -notmatch "Example"}).Fullname
+$TestFiles = (Get-ChildItem -Path .\ -Recurse  | ?{$_.name.EndsWith(".psm1") -and $_.name.EndsWith(".ps1") -and $_.name -notmatch ".tests." -and $_.name -notmatch "build" -and $_.name -notmatch "Example"}).Fullname
 $res = Invoke-Pester -Path ".\Tests" -OutputFormat NUnitXml -OutputFile TestsResults.xml -PassThru -CodeCoverage $TestFiles
 
 #Uploading Testresults to Appveyor
