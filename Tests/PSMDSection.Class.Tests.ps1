@@ -1,7 +1,12 @@
-using module "..\PSMD.psd1"
+$TestsPath = Split-Path $MyInvocation.MyCommand.Path
 
-. $PSScriptRoot\..\Classes\Private\PSMDDocument.Class.ps1
-. $PSScriptRoot\..\Classes\Private\PSMDSection.Class.ps1
+$RootFolder = (get-item $TestsPath).Parent
+
+Push-Location -Path $RootFolder.FullName
+
+set-location -Path $RootFolder.FullName
+
+Import-module ".\PSMD" -force
 
 Describe "Testing Class PSMDSection" {
     Context "Base functionality" {

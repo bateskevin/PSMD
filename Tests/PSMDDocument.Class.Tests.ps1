@@ -1,6 +1,12 @@
-using module "..\PSMD.psd1"
-. $PSScriptRoot\..\Classes\Private\PSMDDocument.Class.ps1
-. $PSScriptRoot\..\Classes\Private\PSMDSection.Class.ps1
+$TestsPath = Split-Path $MyInvocation.MyCommand.Path
+
+$RootFolder = (get-item $TestsPath).Parent
+
+Push-Location -Path $RootFolder.FullName
+
+set-location -Path $RootFolder.FullName
+
+Import-module ".\PSMD" -force
 
 
 
