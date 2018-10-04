@@ -26,6 +26,14 @@ And don't forget to use the following Code to import the module. (The Module con
 Import-Module PSMD
 ```
 
+## Class design
+
+This module is class based. Find here under the current Class Diagram.
+
+![ClassDiagram](/Images/ClassDiagram.png)
+
+To see how the Class Diagramm is created be sure to checkout [PSClassUtils](https://github.com/Stephanevg/PSClassUtils) by Stephanevg
+
 ### To do Base Functionality:
 
 - [X] BulletPoint
@@ -64,10 +72,3 @@ Wanna contribute? please take a look at these files before you start:
 ### Licencing
 
 This Project is licenced under the [MIT Licence](Docs/LICENSE)
-
-
-## Class design
-
-This module is class based. Find here under the current Class Diagram.
-
-![ClassDiagram](.\Images\ClassDiagram.png)
