@@ -1,4 +1,12 @@
-using module "..\PSMD.psd1"
+$TestsPath = Split-Path $MyInvocation.MyCommand.Path
+
+$RootFolder = (get-item $TestsPath).Parent
+
+Push-Location -Path $RootFolder.FullName
+
+set-location -Path $RootFolder.FullName
+
+Import-module ".\PSMD" -force
 
 Describe "Testing Function CodeBlock" {
     Context "Base Functionality" {
@@ -21,6 +29,14 @@ Describe "Testing Function CodeBlock" {
 
         it "[PSMD][Function][CodeBlock] The Line Property should not be empty" {
             $CodeBlock.Line | should not BeNullOrEmpty
+        }
+
+        it "[PSMD][Function][CodeBlock] The string in 'Line' should start with '```````'" {
+            $CodeBlock.Line | should Match '``` *'
+        }
+
+        it "[PSMD][Function][CodeBlock] The string in 'Line' should end with '```````'" {
+            $CodeBlock.Line | should Match '```'
         }
     }
 }

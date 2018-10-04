@@ -1,17 +1,19 @@
 $ScriptPath = Split-Path $MyInvocation.MyCommand.Path
 
+
 write-verbose "Loading Private Classes"
-$PrivateClasses = gci "$ScriptPath\Classes\private" -Filter *.ps1 | Select -Expand FullName
+$PrivateClasses = gci "$ScriptPath\Classes\private" -Filter "*.Class.ps1" | Select -Expand FullName
 
-
-foreach ($private in $PrivateClasses){
-    write-verbose "importing Class $($private)"
+$PrivateClasses
+foreach ($privateCL in $PrivateClasses){
+    write-verbose "importing Class $($privateCL)"
     try{
-        . $private
+        . $privateCL
     }catch{
         write-warning $_
     }
 }
+
 
 <#
 write-verbose "Loading Private Functions"
@@ -40,3 +42,4 @@ foreach ($public in $PublicFunctions){
         write-warning $_
     }
 }
+

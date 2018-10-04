@@ -1,4 +1,12 @@
-using module "..\PSMD.psd1"
+$TestsPath = Split-Path $MyInvocation.MyCommand.Path
+
+$RootFolder = (get-item $TestsPath).Parent
+
+Push-Location -Path $RootFolder.FullName
+
+set-location -Path $RootFolder.FullName
+
+Import-module ".\PSMD" -force
 
 Describe "Testing Function BulletPoint" {
     Context "Base Functionality" {
@@ -23,6 +31,20 @@ Describe "Testing Function BulletPoint" {
 
         it "[PSMD][Function][BulletPoint] The Line Property should not be empty" {
             $BulletPoint.Line | should not BeNullOrEmpty
+        }
+
+        it "[PSMD][Function][BulletPoint] The string in 'Line' should start with '*'" {
+            $BulletPoint.Line | should match '\*'
+        }
+
+        $BulletPoint = BulletPoint -Text "Test" -Level 1
+        it "[PSMD][Function][BulletPoint] The string in 'Line' should start with '   \*'" {
+            $BulletPoint.Line | should match '   '
+        }
+
+        $BulletPoint = BulletPoint -Text "Test" -Level 2
+        it "[PSMD][Function][BulletPoint] The string in 'Line' should start with '     \*'" {
+            $BulletPoint.Line | should match '     '
         }
     }
 }

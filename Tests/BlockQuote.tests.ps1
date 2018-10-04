@@ -1,4 +1,12 @@
-using module "..\PSMD.psd1"
+$TestsPath = Split-Path $MyInvocation.MyCommand.Path
+
+$RootFolder = (get-item $TestsPath).Parent
+
+Push-Location -Path $RootFolder.FullName
+
+set-location -Path $RootFolder.FullName
+
+Import-module ".\PSMD" -force
 
 Describe "Testing Function BlockQuote" {
     Context "Base Functionality" {
@@ -21,6 +29,10 @@ Describe "Testing Function BlockQuote" {
 
         it "[PSMD][Function][BlockQuote] The Line Property should not be empty" {
             $BlockQuote.Line | should not BeNullOrEmpty
+        }
+
+        it "[PSMD][Function][BlockQuote] The string in 'Line' should start with '>'" {
+            $BlockQuote.Line | should BeLike "> *"
         }
     }
 }

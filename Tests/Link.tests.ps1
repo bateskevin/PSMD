@@ -1,4 +1,12 @@
-using module "..\PSMD.psd1"
+$TestsPath = Split-Path $MyInvocation.MyCommand.Path
+
+$RootFolder = (get-item $TestsPath).Parent
+
+Push-Location -Path $RootFolder.FullName
+
+set-location -Path $RootFolder.FullName
+
+Import-module ".\PSMD" -force
 
 Describe "Testing Function Link" {
     Context "Base Functionality" {
@@ -21,6 +29,14 @@ Describe "Testing Function Link" {
 
         it "[PSMD][Function][Link] The Line Property should not be empty" {
             $Link.Line | should not BeNullOrEmpty
+        }
+
+        it "[PSMD][Function][Link] The string in 'Line' should start with '[" {
+            $Link.Line | should Match '\[*'
+        }
+
+        it "[PSMD][Function][Link] The string in 'Line' should end with ')'" {
+            $Link.Line | should BeLike "*)"
         }
     }
 }

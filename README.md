@@ -9,7 +9,7 @@ write Markdown documents in Powershell
 | Dev Branch      | [![Build status](https://ci.appveyor.com/api/projects/status/bpaj88j9pqjxia0a/branch/Dev?svg=true)](https://ci.appveyor.com/project/bateskevin/psmd/branch/Dev)      |
 | Current Build      | [![Build status](https://ci.appveyor.com/api/projects/status/bpaj88j9pqjxia0a?svg=true)](https://ci.appveyor.com/project/bateskevin/psd)      |
 | Test Status      | ![AppVeyor tests branch](https://img.shields.io/appveyor/tests/bateskevin/PSMD/master.svg)      |
-| Code Coverage      | ![Test Coverage](https://img.shields.io/badge/coverage-86%25-yellow.svg?maxAge=60)      |
+| Code Coverage      | ![Test Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg?maxAge=60)      |
 
 ### Wanna learn how it's done?
 Check out [this document](Docs/Sample.md) to learn how to use PSMD.
@@ -20,6 +20,10 @@ Install the Module from the Powershell Gallery
 
 ```
 Install-Module PSMD
+```
+And don't forget to use the following Code to import the module. (The Module contains Classes.)
+```
+Import-Module PSMD
 ```
 
 ### To do Base Functionality:
@@ -60,3 +64,10 @@ Wanna contribute? please take a look at these files before you start:
 ### Licencing
 
 This Project is licenced under the [MIT Licence](Docs/LICENSE)
+
+
+## Class design
+
+This module is class based. Find here under the current Class Diagram.
+
+![ClassDiagram](.\Images\ClassDiagram.png)
