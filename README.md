@@ -64,3 +64,10 @@ Wanna contribute? please take a look at these files before you start:
 ### Licencing
 
 This Project is licenced under the [MIT Licence](Docs/LICENSE)
+
+
+## Class design
+
+This module is class based. Find here under the current Class Diagram.
+
+![ClassDiagram](.\Images\ClassDiagram.png)
