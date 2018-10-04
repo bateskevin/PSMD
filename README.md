@@ -23,7 +23,7 @@ Install-Module PSMD
 ```
 And don't forget to use the following Code to import the module. (The Module contains Classes.)
 ```
-Using Module .\PSMD.psd1
+Import-Module PSMD
 ```
 
 ### To do Base Functionality:
