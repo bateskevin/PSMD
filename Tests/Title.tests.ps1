@@ -1,4 +1,12 @@
-using module "..\PSMD.psd1"
+$TestsPath = Split-Path $MyInvocation.MyCommand.Path
+
+$RootFolder = (get-item $TestsPath).Parent
+
+Push-Location -Path $RootFolder.FullName
+
+set-location -Path $RootFolder.FullName
+
+Import-module ".\PSMD" -force
 
 Describe "Testing Function Title" {
     Context "Base Functionality" {

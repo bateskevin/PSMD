@@ -23,8 +23,16 @@ Install-Module PSMD
 ```
 And don't forget to use the following Code to import the module. (The Module contains Classes.)
 ```
-Using Module .\PSMD.psd1
+Import-Module PSMD
 ```
+
+## Class design
+
+This module is class based. Find here under the current Class Diagram.
+
+![ClassDiagram](/Images/ClassDiagram.png)
+
+To see how the Class Diagramm is created be sure to checkout [PSClassUtils](https://github.com/Stephanevg/PSClassUtils) by Stephanevg
 
 ### To do Base Functionality:
 
